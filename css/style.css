@@ -1,0 +1,1062 @@
+/*------------------------\
+        *RESET*
+\------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+    --dark-bg: #1D1D1D;
+    --white: #FFF;
+    --orange: #FF9C00;
+    --purple: #7700A1;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --border: 1px solid #636363;
+}
+
+body,
+h1,
+h2,
+h6,
+p,
+ul,
+li,
+figure,
+figcaption {
+    margin: 0;
+}
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--purple);
+    color: var(--white);
+    font-family: Inter;
+    --chakra: 'Chakra Petch';
+    background-image: url('../images/hero-background.png');
+}
+
+ul {
+    padding: 0;
+    list-style: none;    
+}
+
+a, span, img, button { display: block; }
+
+a { 
+    text-decoration: none; 
+    color: inherit;
+}
+
+img { max-width: 100%; }
+
+button {
+    background-color: inherit;
+    border: none;
+}
+
+button:hover { cursor: pointer; }
+
+/*------------------------\
+        *BASE*
+\------------------------*/
+.container { 
+    padding-inline: 16px; 
+    padding-top: 7px;
+}
+
+@media screen and (min-width: 62em) {
+    .container {
+        padding-inline: 50px; 
+        padding-top: 20px;
+    }
+}
+
+.row { display: block;}
+
+@media screen and (min-width: 48em) {
+    .row {
+        display: flex;
+        flex-direction: row !important;
+    }
+    .row .column {
+        flex: 1;
+    }
+}
+
+
+.flex-row {
+    display: flex;
+}
+
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center { justify-content: center; }
+.align-center { align-items: center; }
+
+.w-100 { width: 100%; }
+
+.text-center { text-align: center; }
+.primary-button {
+    padding-block: 13px;
+    padding-inline: 45px;
+    box-shadow: 0px 1.07692px 7.26923px rgba(0, 0, 0, 0.25);
+    border-radius: 44px;
+    background-color: var(--orange);
+    transition: transform .3s, border-bottom .3s;
+}
+
+.primary-button:hover {
+    transform: translateY(-10px);
+}
+
+@media screen and (min-width: 48em) {
+    .primary-button {
+        padding-block: 24px;
+    }
+}
+
+.secondary-button {
+    color: var(--orange);
+    gap: 13px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: var(--fw-700);
+    text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: var(--fw-700);
+}
+
+@media screen and (min-width: 48em) {
+    h1, h2 {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    h1, h2 {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    h2 {
+        margin-bottom: 95px;
+    }
+}
+
+.ff-chakra{
+    font-family: var(--chakra);
+    font-weight: var(--fw-700);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 48em) {
+    .ff-chakra {
+        font-size: 1.8rem;
+    }
+}
+
+/*------------------------\
+        *HEADER*
+\------------------------*/
+.header { top: -100px; }
+.header.fixed {
+    width: 100%;
+    top: -100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-inline: 16px; 
+    padding-top: 7px;
+    z-index: 20;
+    background-color: var(--purple);
+    transition: top .5s;
+}
+
+@media screen and (min-width: 48em) {
+    .header { gap: 20px; }
+}
+
+.logo-wrapper { width: 154px; }
+
+@media screen and (min-width: 48em) {
+    .logo-wrapper { 
+        flex: 1; 
+        display: flex;
+    }
+}
+
+.header-extra { display: none; }
+
+@media screen and (min-width: 62em) {
+    .header-extra { 
+        display: flex; 
+        justify-content: space-between;
+        gap: 20px;
+        flex: 1;
+    }
+    .languages {
+        color: var(--white);
+        background-color: transparent;
+        border: none;
+    }
+    .connect-wallet {
+        flex: 3;
+        padding: 15px;
+        color: var(--orange);
+        border: 1px solid var(--orange);
+        border-radius: 40px;
+        font-size: 2rem;
+    }
+}
+
+.nav-button { font-size: 3rem; }
+
+.nav-open ion-icon { color: var(--white);
+}
+
+@media screen and (min-width: 48em) {
+    .nav-open {
+        display: none;
+    }
+}
+
+.navbar {
+    position: fixed;
+    z-index: 5;
+    width: 70%;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    transition: left .5s;
+}
+
+@media screen and (min-width: 48em) {
+    .navbar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex: 2;
+    }
+}
+
+.navbar.active {
+    left: 0;
+}
+.navbar::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s;
+}
+.navbar.active::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (min-width: 48em) {
+    .navbar::after {
+        display: none;
+    }
+}
+
+.navbar__inner {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    display: flex;
+}
+
+@media screen and (min-width: 48em) {
+    .navbar__inner {
+        background-color: transparent;
+    }
+}
+
+.nav-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 48em) {
+    .nav-close {
+        display: none;
+    }
+}
+
+.navbar-list {
+    width: 100%;
+}
+
+@media screen and (min-width: 48em) {
+    .navbar-list {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+}
+
+.navbar-link {
+    margin-block: 30px;
+    font-family: var(--chakra);
+    font-size: 1.5rem;
+    font-weight: var(--fw-700);
+    color: var(--purple);
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 48em) {
+    .navbar-link {
+        font-size: 1.6rem;
+        color: var(--white);
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .wallet { display: none; }
+}
+
+/*------------------------\
+        *HERO*
+\------------------------*/
+.hero-content {
+    padding-block: 30px 40px;
+}
+.hero-content,
+.hero-img{ 
+    position: relative;
+    overflow: hidden;
+}
+.hero-img { text-align: center;}
+
+.hero-main {
+    width: 228px;
+}
+
+@media screen and (min-width: 48em) {
+    .hero-main {
+        width: 40%;
+    }
+}
+
+.hero-secondary {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    width: 20%;
+    z-index: -1;
+}
+@media screen and (min-width: 48em) {
+    .hero-secondary {
+        left: calc(50% - 100px);
+        top: calc(50% - 100px);
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .hero-secondary {
+        width: 20%;
+    }
+}
+
+.hero-bg-text {
+    position: absolute;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.hero-bg-text:first-child {
+    left: -60%;
+    top: 50%;
+}
+
+.hero-bg-text:last-child {
+    right: -40%;
+    bottom: 20%;
+}
+
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+@media screen and (min-width: 48em) {
+    .hero-buttons .column {
+        display: flex;
+        justify-content: center;
+    }
+    .hero-buttons button{
+        width: max-content;
+        
+    }
+}
+
+.hero-buttons ion-icon {
+    font-size: 4rem;
+}
+
+/*------------------------\
+        *MARKETPLACES*
+\------------------------*/
+.marketplaces {
+    position: relative;
+    overflow: hidden;
+    padding-block: 10px;
+}
+
+.marketplaces__inner {
+    padding-block: 20px;
+    width: 100%;
+    transform: rotate(1.28deg);
+    background-color: #CB7C00;
+}
+
+.marketplaces__inner::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: -50%;
+    top: 0;
+    background-color: #CB7C00;
+}
+
+.marketplaces-list {
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    gap: 9px;
+    transform: rotate(-2.56deg);
+    background-color: var(--orange);
+}
+
+.marketplaces-list::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: -50%;
+    top: 0;
+    background-color: var(--orange);
+    z-index: -1;
+}
+
+.marketplaces-item {
+    flex: 1;
+}
+
+.marketplaces-item img{
+    width: 100%;    
+}
+
+/*------------------------\
+        *UNITS*
+\------------------------*/
+
+.section-black {
+    background-color: var(--dark-bg);
+    background-image: url('../images/units-background.png');
+    background-repeat: no-repeat;
+    background-position: -50px -100px;
+    padding-block: 40px;
+}
+
+.units-carousel { 
+    position: relative; 
+    height: 320px;
+    overflow-x: hidden;
+    margin-block-end: 30px;
+}
+@media screen and (min-width: 48em) {
+    .units-carousel {
+        margin-block-end: 140px;
+    }
+}
+
+@media screen and (min-width: 37.5em) {
+    .units-carousel {
+        height: 500px;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .units-carousel {
+        height: 700px;
+    }
+}
+
+.carousel__inner { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-list {
+    position: relative;
+    height: 100%;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    transition: left .5s;
+}
+@media screen and (min-width: 48em) {
+    .carousel-list {
+        padding-block: 40px;
+        gap: 10px;
+    }
+}
+.carousel-item {
+    padding: 20px 18px 25px 18px;
+    background-color: rgba(50, 50, 50, 0.8);
+    min-width: 138px;
+    max-height: 100%;
+    flex: 1;
+}
+
+@media screen and (min-width: 48em) {
+    .carousel-item {
+        max-width: 30%;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .carousel-item {
+        max-width: 25%;
+    }
+}
+
+
+.carousel-item.active {
+    border: 3.5px solid var(--orange);
+    min-width: 186px;
+    max-height: 100%;
+    flex: 1.5;
+}
+
+@media screen and (min-width: 48em) {
+    .carousel-item.active {
+        border: 3.5px solid var(--orange);
+        max-width: 40%;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .carousel-item.active {
+        max-width: 30%;
+    }
+}
+
+.nft-card {
+    height: 100%;
+}
+
+.nft-card > img {
+    max-height: 100%;
+    min-width: 100px;
+    max-width: 100%;
+}
+
+.nft-card > img {
+    margin-bottom: 15px;
+}
+
+.carousel-item.active .nft-card > img {
+    margin-bottom: 20px;
+}
+
+.nft-card figcaption img {
+    width: 10px;
+}
+@media screen and (min-width: 48em) {
+    .nft-card figcaption img {
+        width: 28px;
+    }
+}
+.user {
+    gap: 6px;
+    margin-block-end: 15px;
+}
+@media screen and (min-width: 48em) {
+    .user {
+        gap: 15px;
+        margin-block-end: 40px;
+    }
+}
+.user span {
+    font-size: 0.4em;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 48em) {
+    .user span {
+        font-size: 1.1rem;
+    }
+}
+
+.nft-title {
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 48em) {
+    .nft-title {
+        font-size: 2.6rem;
+    }
+}
+
+.primary-link ion-icon{
+    width: 11px;
+    height: 11px;
+    padding: 3px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    color: #000;
+}
+
+@media screen and (min-width: 48em) {
+    .primary-link ion-icon {
+        width: 25px;
+        height: 25px;
+        padding: 8px;
+    }
+}
+
+.carousel-item.active .user span {
+    font-size: 6px;
+}
+@media screen and (min-width: 48em) {
+    .carousel-item.active .user span {
+        font-size: 1.6rem;
+    }
+}
+
+.carousel-item.active figcaption img {
+    width: 14px;
+}
+
+@media screen and (min-width: 48em) {
+    .carousel-item.active figcaption img {
+        width: 38px;
+    }
+}
+
+.carousel-item.active .nft-title {
+    font-size: 1.3rem;
+}
+
+@media screen and (min-width: 48em) {
+    .carousel-item.active .nft-title {
+        font-size: 3.5rem;
+    }
+    
+}
+
+.carousel-buttons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 5px;
+    font-size: 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color .3s;
+    z-index: 10;
+}
+
+.carousel-buttons button[data-carousel-next] {
+    right: 0;
+}
+
+@media screen and (min-width: 48em) {
+    .carousel-buttons button {
+        padding: 40px;
+    }
+}
+
+.carousel-buttons button:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+.carousel-buttons ion-icon {
+    color: var(--orange);
+    transition: color .3s;
+}
+
+@media screen and (min-width: 48em) {
+    .carousel-buttons ion-icon {
+        font-size: 8rem;
+    }
+}
+
+.carousel-buttons button:hover ion-icon {
+    color: var(--white);
+}
+
+/*------------------------\
+        *BENEFIT*
+\------------------------*/
+.benefit {
+    padding-inline: 16px;
+}
+@media screen and (min-width: 62em) {
+    .benefit {
+        padding-inline: 50px;
+    }
+}
+.benefit .column {
+    flex: auto;
+}
+
+.benefit-items {
+    gap: 12px;
+    margin-block-end: 28px;
+    height: 100%;
+}
+
+@media screen and (min-width: 48em) {
+    .benefit-items {
+        margin-block-end: 0;
+        justify-content: flex-end;
+    }
+    .benefit h2 {
+        margin-block-end: 0;
+    }
+
+    .benefit .row {
+        margin-block-end: 80px;
+    }
+}
+
+.benefit-button {
+    font-size: 1.2rem;
+    color: #9E9E9E;
+}
+
+.benefit-button.active {
+    font-weight: 500;
+    color: #D0D0D0;
+}
+
+.benefit-table {
+    width: 100%; 
+    padding: 24px 14px 12px 14px;
+    background-color: rgba(50, 50, 50, 0.8);
+    margin: 0 auto 37px auto;
+    
+}
+
+@media screen and (min-width: 48em) {
+    .benefit-table { 
+        padding: 100px 75px 125px 75px;
+        justify-content: space-between;
+    }
+}
+
+.benefit-table th {
+    padding-block-end: 27px;
+    color: #C9C9C9;
+    font-weight: 500;
+    text-align: left;
+}
+
+@media screen and (min-width: 48em) {
+    .benefit-table th {
+        font-size: 2rem;
+    }
+}
+
+th, 
+.game,
+.chance,
+.profit { 
+    font-size: 1rem; 
+    font-weight: 700;
+    line-height: 12px;
+}
+
+@media screen and (min-width: 48em) {
+    .game,
+    .chance,
+    .profit {
+        font-size: 2.2rem;
+    }
+}
+
+td { 
+    font-size: 0.8rem; 
+    line-height: 1.2;
+    padding-block: 5px;
+    vertical-align: top;
+}
+
+@media screen and (min-width: 48em) {
+    td { 
+        font-size: 1.5rem;
+        height: 120px;
+        vertical-align: middle;
+    }
+    
+}
+
+@media screen and (min-width: 37.5em) {
+    tr td:nth-child(2){
+        width: 150px;
+    }
+}
+
+.game { position: relative; }
+
+.game::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 48em) {
+    .game::before {
+        width: 14px;
+        height: 14px;
+        left: -30px
+    }
+}
+
+.game.white::before {
+    background-color: var(--white);
+}
+
+.game.green::before {
+    background-color: #B6D600;
+}
+
+.game.orange::before {
+    background-color: #FF9C00;
+}
+
+.game.blue::before {
+    background-color: #130FCE;
+}
+
+.game.turquoise::before {
+    background-color: #00B2FF;
+}
+
+.game.pink::before {
+    background-color: #FF73E9;
+}
+
+
+/*------------------------\
+        *JOIN*
+\------------------------*/
+.join {
+    padding: 36px 50px 50px 50px;
+    background-color: var(--purple);
+    background-image: url('../images/join-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (min-width: 48em) {
+    .join {
+        padding-block: 75px 100px;
+    }
+}
+
+.join h2{
+    margin-block-end: 37px;
+}
+@media screen and (min-width: 48em) {
+    .join h2{
+        margin-block-end: 92px;
+    }
+}
+.join .ff-chakra {
+    font-size: 1rem;
+    color: #000;
+}
+
+@media screen and (min-width: 48em) {
+    .join .ff-chakra {
+        font-size: 2.2rem;
+    }
+}
+
+.join a {
+    gap: 15px;
+}
+
+.join a:first-child {
+    margin-block-end: 7px;
+}
+
+.join img {
+    width: 18px;
+    height: 18px;
+}
+@media screen and (min-width: 48em) {
+    .join-buttons .primary-button {
+        width: max-content;
+    }
+    .join-buttons .column {
+        display: flex;
+        justify-content: center;
+    }
+    .join-buttons img {
+        width: 24px;
+    }
+}
+
+/*------------------------\
+        *FOOTER*
+\------------------------*/
+
+.footer {
+    padding-block: 15px 40px;
+    background-color: var(--dark-bg);
+    border-top: var(--border);
+}
+
+.footer .row {
+    align-items: flex-start; 
+    gap: 60px; 
+}
+
+@media screen and (min-width: 48em) {
+    .footer { 
+        padding-inline: 50px;
+        border: none; 
+    }
+}
+
+.footer .column {
+    padding-inline: 50px;
+}
+
+@media screen and (min-width: 48em) {
+    .footer .column {
+        padding-inline: 0;
+    }
+}
+
+.footer-logo-wrapper {
+    margin-block-end: 16px;
+}
+
+@media screen and (min-width: 48em) {
+    .footer-logo-wrapper {
+        justify-content: flex-start;
+    }
+}
+
+.copyright {
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 27px;
+    text-indent: 0;
+}
+
+@media screen and (min-width: 48em) {
+    .copyright {
+        font-size: 1.7rem;
+        margin-bottom: 0;
+        text-align: left;
+    }
+}
+
+.footer-navbar-wrapper {
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+
+@media screen and (min-width: 48em) {
+    .footer-navbar-wrapper { border: none; }
+}
+
+.footer-navbar{
+    padding-block: 22px;
+}
+
+@media screen and (min-width: 48em) {
+    .footer-navbar{
+        padding-block: 0;
+       
+    }
+
+    .footer-navbar-list {
+        gap: 52px;
+    }
+}
+
+.footer-nav-link {
+    font-family: var(--chakra);
+    font-weight: 500;
+}
+
+@media screen and (min-width: 48em) {
+    .footer-nav-link {
+        font-size: 1.6rem;
+    }
+}
+
+.social {
+    padding-block-start: 30px;
+}
+
+@media screen and (min-width: 48em) {
+    .social {
+        padding-block-start: 0;
+        gap: 20px;
+    }
+    .social img {
+        width: 24px;
+    }
+}
+
+.social img {
+    width: 28px;
+}

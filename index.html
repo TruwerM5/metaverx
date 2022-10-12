@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaverx</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="images/icons8-m-72.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- 
+            *HEADER*
+        -->
+        <header class="header flex-row justify-between align-center">
+            <button class="nav-open nav-button">
+                <ion-icon name="reorder-two-outline"></ion-icon>
+            </button>
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <nav class="navbar" data-navbar>
+                <div class="navbar__inner">
+                    <ul class="navbar-list text-center">
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link">Home</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link">About</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link">Units</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link">Benefit</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link">Whitepaper</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="nav-close nav-button">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </nav>
+            <a href="#" class="wallet">
+                <img src="images/wallet.png" alt="wallet">
+            </a>
+            <div class="header-extra flex-row align-center">
+                <select name="languages" id="langs" class="languages">
+                    <option value="EN">EN</option>
+                    <option value="RU">RU</option>
+                </select>
+                <button class="connect-wallet">Connect Wallet</button>
+            </div>
+        </header>
+    </div>
+    <!--
+        *MAIN*
+    -->
+        <main>
+            <div class="hero-content container">
+                <h1 class="text-center">
+                    <span>Gamefi Scholarship</span> 
+                    <span>Play and Learn To Earn</span>
+                </h1>
+                <figure class="hero-img flex-row justify-center">
+                    <img src="images/hero.png" alt="hero" class="hero-main">
+                    <img src="images/hero-secondary.png" alt="hero-secondary" class="hero-secondary">
+                </figure>
+                <div class="hero-buttons row">
+                    <div class="column">
+                        <button class="primary-button w-100">
+                            <span class="ff-chakra">Join now</span>
+                        </button>
+                    </div>
+                    <div class="column">
+                        <button class="secondary-button w-100 flex-row justify-center align-center">
+                            <ion-icon name="caret-forward-circle-outline"></ion-icon>
+                            <span class="ff-chakra">How it Works</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-text-wrapper">
+                    <img src="images/hero-bg-text.png" alt="bg-text" class="hero-bg-text">
+                    <img src="images/hero-bg-text.png" alt="bg-text" class="hero-bg-text">
+                </div>
+            </div>
+            <div class="marketplaces">
+                <div class="marketplaces__inner">
+                    <ul class="marketplaces-list justify-center">
+                        <li class="marketplace-item">
+                            <img src="images/axie.png" alt="axie">
+                        </li>
+                        <li class="marketplace-item">
+                            <img src="images/sandbox.png" alt="sandbox">
+                        </li>
+                        <li class="marketplace-item">
+                            <img src="images/rarible.png" alt="rarible">
+                        </li>
+                        <li class="marketplace-item">
+                            <img src="images/opensea.png" alt="opensea">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <section class="section-black">
+                <h2 class="text-center">Our Units</h2>
+                <div class="units-carousel">
+                    <div class="carousel__inner">
+                        <ul class="carousel-list flex-row">
+                            <li class="carousel-item">
+                                <figure class="nft-card">
+                                    <img src="images/nft-card-1.jpg" alt="nft">
+                                    <figcaption>
+                                        <div class="user flex-row align-center">
+                                            <img src="images/avatar.png" alt="avatar">
+                                            <span>#1st Unit</span>
+                                        </div>
+                                        <div class="flex-row justify-between align-center">
+                                            <h6 class="nft-title">Maze Game</h6>
+                                            <a href="#" class="primary-link">
+                                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="carousel-item active">
+                                <figure class="nft-card">
+                                    <img src="images/nft-card-2.jpg" alt="nft">
+                                    <figcaption>
+                                        <div class="user flex-row align-center">
+                                            <img src="images/avatar.png" alt="avatar">
+                                            <span>#2nd Unit</span>
+                                        </div>
+                                        <div class="flex-row justify-between align-center">
+                                            <h6 class="nft-title">Overdrive Rend</h6>
+                                            <a href="#" class="primary-link">
+                                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="carousel-item">
+                                <figure class="nft-card">
+                                    <img src="images/nft-card-3.jpg" alt="nft">
+                                    <figcaption>
+                                        <div class="user flex-row align-center">
+                                            <img src="images/avatar.png" alt="avatar">
+                                            <span>#3rd Unit</span>
+                                        </div>
+                                        <div class="flex-row justify-between align-center">
+                                            <h6 class="nft-title">Dao Launchpad</h6>
+                                            <a href="#" class="primary-link">
+                                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                        <div class="carousel-buttons flex-row justify-between">
+                            <button class="prev" data-carousel-prev>
+                                <ion-icon name="arrow-back-circle-outline"></ion-icon>
+                            </button>
+                            <button class="next" data-carousel-next>
+                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="row align-center justify-between">
+                        <div class="column">
+                            <h2 class="text-center">Scolarship Benefit</h2>
+                        </div>
+                        <div class="column">
+                            <ul class="benefit-items flex-row justify-center">
+                                <li>
+                                    <a href="#" class="benefit-button active">Upcoming</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="benefit-button">Completed</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <table class="benefit-table">
+                        <thead>
+                            <tr>
+                                <th>Game</th>
+                                <th>Noted</th>
+                                <th>Chance</th>
+                                <th class="nowrap">All Time Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="game white">Play to earn</td>
+                                <td>Play blockchain game and get the profit</td>
+                                <td class="chance">50%</td>
+                                <td class="profit">309000 BTC</td>
+                            </tr>
+                            <tr>
+                                <td class="game green">Game Rental</td>
+                                <td>
+                                    The battleground will match you 
+                                    with teammates and opponents of similar 
+                                    levels
+                                </td>
+                                <td class="chance">18%</td>
+                                <td class="profit">1800 BTC</td>
+                            </tr>
+                            <tr>
+                                <td class="game orange">Team Fight</td>
+                                <td>Play blockchain game and get the profit with other members</td>
+                                <td class="chance">78%</td>
+                                <td class="profit">112900 BTC</td>
+                            </tr>
+                            <tr>
+                                <td class="game blue">Investment</td>
+                                <td>Invest asset on marketplace</td>
+                                <td class="chance">10%</td>
+                                <td class="profit">901 BTC</td>
+                            </tr>
+                            <tr>
+                                <td class="game turquoise">Ace Role</td>
+                                <td>Be The Map</td>
+                                <td class="chance">56%</td>
+                                <td class="profit">59091 BTC</td>
+                            </tr>
+                            <tr>
+                                <td class="game pink">Early Access</td>
+                                <td>Get early access to new game</td>
+                                <td class="chance">98%</td>
+                                <td class="profit">98000 BTC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container">
+                    <div class="join">
+                        <h2 class="text-center">Join Our Community</h2>
+                        <div class="join-buttons">
+                            <div class="row">
+                                <div class="column">
+                                    <a href="#" class="primary-button w-100 flex-row justify-center align-center">
+                                        <img src="images/telegram.svg" alt="telegram">
+                                        <span class="ff-chakra">Join Telegram</span>
+                                    </a>
+                                </div>
+                                <div class="column">
+                                    <a href="#" class="primary-button w-100 flex-row justify-center align-center">
+                                        <img src="images/discord.svg" alt="discord">
+                                        <span class="ff-chakra">Join Discord</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-logo-wrapper flex-row justify-center">
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+            </div>
+                <div class="row justify-between">
+                    <div class="column">
+                        <p class="copyright text-center">&copy; 2022 GitHub TruwerM5. All rights reserved.</p>
+                    </div>
+                    <div class="column footer-navbar-wrapper">
+                        <nav class="footer-navbar">
+                            <ul class="footer-navbar-list flex-row justify-between">
+                                <li>
+                                    <a href="#" class="footer-nav-link">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-nav-link">About</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-nav-link">Units</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-nav-link">Benefit</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-nav-link">Whitepaper</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="column">
+                        <ul class="social flex-row justify-between align-center">
+                            <li class="social-item">
+                                <a href="#" class="social-link">
+                                    <img src="images/social-1.svg" alt="social">
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a href="#" class="social-link">
+                                    <img src="images/social-2.svg" alt="social">
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a href="#" class="social-link">
+                                    <img src="images/social-3.svg" alt="social">
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a href="#" class="social-link">
+                                    <img src="images/social-4.svg" alt="social">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </footer>
+    <script src="js/script.js"></script>
+    <!-- ION-ICON -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
